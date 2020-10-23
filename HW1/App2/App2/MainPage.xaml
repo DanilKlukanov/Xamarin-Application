@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.MainPage"
+             Title="Menu">
+
+    <StackLayout BackgroundColor="#84c1fa">
+        
+        <Picker x:Name="picker" SelectedIndexChanged="picker_selected_index_changed" BackgroundColor="White" Margin="10, 10, 10, 10">
+            <Picker.Items>
+                <x:String>Water</x:String>
+                <x:String>Sprite</x:String>
+                <x:String>Monster</x:String>
+                <x:String>Schweppes</x:String>
+            </Picker.Items>
+        </Picker>
+        
+        <Frame Margin="10, 10, 10, 10" HeightRequest="320" WidthRequest="320" CornerRadius="10" BackgroundColor="White" BorderColor="Black">
+            <Image x:Name="img"/>
+        </Frame>
+
+        <Label x:Name="desc" Text="You haven't selected anything" FontSize="18" TextColor="Black" HorizontalOptions="Center"/>
+        
+        <StackLayout Orientation="Horizontal" Margin="10, 10, 10, 10">
+            <Editor  x:Name="amount" HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="0" TextChanged="amount_text_changed"/>
+            <Stepper x:Name="stepper" Minimum="0" Maximum="100" ValueChanged="stepper_value_changed"/>
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0, 70, 0, 0" HeightRequest="60">
+            <Button Text="Confirm" BackgroundColor="#E0E0E0" CornerRadius="50" Margin="0, 0, 10, 10" Clicked="Confirm_button_clicked" BorderColor="#fff" BorderWidth="5"/>
+            <Button x:Name="order" Text="Order" BackgroundColor="#E0E0E0" CornerRadius="50" Margin="0, 0, 10, 10" Clicked="Order_button_clicked" BorderColor="#fff" BorderWidth="5"/>
+        </StackLayout>
+    
+    </StackLayout>
+
+</ContentPage>
